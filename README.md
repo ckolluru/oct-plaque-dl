@@ -2,7 +2,9 @@ Deep Learning techniques for IVOCT A-line classification
 
 Matlab part does the pre- and post- processing, Python part has the deep neural network implementation
 Matlab codes can be run on any PC with MATLAB installed on it (tested with R2016a).
-Python codes need keras and tensorflow libraries installed. (tested with a singularity image on CWRU HPC, singularity image file is in python/singularity_image/keras_tf_2.img: neural network train/test, python/singularity_image/Keras_TF.img: conditional random field processing. Some effort needed to merge into one image).
+Python codes need keras and tensorflow libraries installed. (tested with a singularity image on CWRU HPC)
+Alternate singularity image was used to run the dense conditional random field processing.
+(Some effort needed to merge into one image).
 
 Steps to run the code:
 
@@ -18,7 +20,7 @@ Steps to run the code:
 
 6. Run oct_model.py or oct_model_ann.py if you want to run the CNN or ANN respectively. Results are stored in results_cnn/results_ann if doing the ten fold cross validation. If doing a split sample validation on a completely held out test set, change lines in these files to do that (comment line 510 in oct_model.py and uncomment line 516 in oct_model.py, comment line 471 in oct_model_ann.py, uncomment line 477 in oct_model_ann.py). Results of the split sample validation are stored in results_split_sample_validation folder
 
-7.Copy over the test prediction matrices (Predictions Folds in the particular results folder for cross validation or Predictions in results_split_sample_validation folder) back into the PC with MATLAB on it.
+7. Copy over the test prediction matrices (Predictions Folds in the particular results folder for cross validation or Predictions in results_split_sample_validation folder) back into the PC with MATLAB on it.
 
 8. Run visualize_predictions_en_face_view.m: Makes individual prediction matrices for each pullback
 
